@@ -9,6 +9,7 @@ import (
 // 这是IM及时通讯
 // 这是hot-fix分支提交
 // 这是master分支提交
+// 这是hot-fix分支第二次提交
 func main() {
 	utils.InitConfig()
 	utils.InitMySQL()
