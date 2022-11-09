@@ -5,6 +5,7 @@ import (
 	"ginchat/utils"
 )
 
+// 这是程序入口
 func main() {
 	utils.InitConfig()
 	utils.InitMySQL()
