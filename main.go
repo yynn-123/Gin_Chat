@@ -10,6 +10,7 @@ import (
 // 这是hot-fix分支提交
 // 这是master分支提交
 // 这是hot-fix分支第二次提交
+// push test
 func main() {
 	utils.InitConfig()
 	utils.InitMySQL()
