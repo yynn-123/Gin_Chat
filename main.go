@@ -11,6 +11,7 @@ import (
 // 这是master分支提交
 // 这是hot-fix分支第二次提交
 // push test
+// 远程库 pull test
 func main() {
 	utils.InitConfig()
 	utils.InitMySQL()
