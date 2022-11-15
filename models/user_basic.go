@@ -40,11 +40,9 @@ func GetUserList() []*UserBasic {
 func CreateUser(user UserBasic) *gorm.DB {
 	return utils.DB.Create(&user)
 }
-
 func DeleteUser(user UserBasic) *gorm.DB {
 	return utils.DB.Delete(&user)
 }
-
 func UpdateUser(user UserBasic) *gorm.DB {
 	return utils.DB.Model(&user).Updates(UserBasic{Name: user.Name, PassWord: user.PassWord})
 }
@@ -52,6 +50,10 @@ func UpdateUser(user UserBasic) *gorm.DB {
 func FindUserByNameAndPwd(name, password string) UserBasic {
 	user := UserBasic{}
 	utils.DB.Where("name = ? and password = ?", name, password).First(&user)
+	// token加密
+	//str := fmt.Sprintf("%d", time.Now().Unix())
+	//temp := utils.MD5Encode(str)
+	utils.DB.Model(user).Where("id = ?", user.ID).Update("Identity", user.Identity)
 	return user
 }
 
